@@ -215,14 +215,14 @@ else
 
   #dir_name="cdnfly-master-$VER"
   dir_name="cdnfly-master-v5.1.11"
-  tar_gz_name="$dir_name-$(get_sys_ver).tar.gz"
+  tar_gz_name="$dir_name-$(get_sys_ver).zip"
   echo "安装指定版本$VER"
 fi
 
 cd /opt/
-download "https://github.com/1291422620/cdnfly-kaixin/raw/main/master/$tar_gz_name" "https://github.com/LoveesYe/cdnflydadao/raw/main/master/$tar_gz_name" "$tar_gz_name"
-
-tar xf $tar_gz_name
+download "https://github.com/1291422620/cdnfly-kaixin/raw/main/master/$tar_gz_name" "https://github.com/1291422620/cdnfly-kaixin/raw/main/master/$tar_gz_name" "$tar_gz_name"
+yum install unzip
+unzip $tar_gz_name
 rm -rf cdnfly
 mv $dir_name cdnfly
 
